@@ -33,7 +33,7 @@ namespace MemoryGame
 
         private void discoverCardEvent(object sender, EventArgs e)
         {
-
+            //TEST COMMENT
             if (sender == boxIcon1)
             {
 
