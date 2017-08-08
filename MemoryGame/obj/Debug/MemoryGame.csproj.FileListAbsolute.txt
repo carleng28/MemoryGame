@@ -9,3 +9,14 @@ c:\users\carlo\onedrive\documentos\visual studio 2017\Projects\MemoryGame\Memory
 c:\users\carlo\onedrive\documentos\visual studio 2017\Projects\MemoryGame\MemoryGame\obj\Debug\MemoryGame.pdb
 C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\MemoryGame\MemoryGame\obj\Debug\MemoryGame.user.resources
 C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\MemoryGame\MemoryGame\obj\Debug\MemoryGame.highScores.resources
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\bin\Debug\MemoryGame.exe.config
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\bin\Debug\MemoryGame.exe
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\bin\Debug\MemoryGame.pdb
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.csprojResolveAssemblyReference.cache
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.highScores.resources
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.Properties.Resources.resources
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.csproj.GenerateResource.Cache
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.exe
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.pdb
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.MemoryGame.resources
+C:\Users\carlo\OneDrive\Documentos\Visual Studio 2017\Projects\Memory\MemoryGame\obj\Debug\MemoryGame.UserSelect.resources

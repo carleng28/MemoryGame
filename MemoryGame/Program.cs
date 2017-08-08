@@ -16,7 +16,7 @@ namespace MemoryGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new user());
+            Application.Run(new UserSelect());
         }
     }
 }
