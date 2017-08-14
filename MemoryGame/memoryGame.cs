@@ -18,15 +18,18 @@ namespace MemoryGame
     {
 
         private static MemoryGame instance;
-        private static object syncRoot = new Object();
+        
         public UserSelect userMenu;
         public String username;
+        public int score;
 
         //DATA STRUCTURE 2 OF 5
         int[] boardGame = new int[16];
         int playNumber = 0;
         //DATA STRUCTURE 3 OF 5
         List<int> pairPlay = new List<int>();
+        //DATA STRUCTURE 4 OF 5
+        Dictionary<String, int> hsTable = new Dictionary<String, int>();
         int points = 0;
         int chain = 0;
         int correctPlays = 0;
@@ -42,8 +45,10 @@ namespace MemoryGame
             this.userMenu = u;
             u.Hide();
             this.username = username;
+            this.score = 0;
             pairPlay.Add(0);
             pairPlay.Add(1);
+            this.hsTable.Add(username, 0);
             InitializeComponent();
 
         }
@@ -53,13 +58,26 @@ namespace MemoryGame
 
             if (instance == null)
             {
-                lock (syncRoot)
-                {
-                    if (instance == null)
-                        instance = new MemoryGame(username, u);
-                }
+
+                instance = new MemoryGame(username, u);
 
             }
+            else {
+
+                if (instance.hsTable.ContainsKey(username)) 
+                {
+                    instance.hsTable[username] = 0;
+                } else {
+
+                    instance.hsTable.Add(username, 0);
+                }
+                
+                instance.username = username;
+                instance.score = 0;
+                instance.lbl_score.Text = "0";
+                instance.startOver(null, null);
+            }
+
             return instance;
             
         }
@@ -210,7 +228,7 @@ namespace MemoryGame
             {
 
                 MessageBox.Show("Game over!\nScore: " + points);
-                insertScore();
+                //insertScore();
                 showHighScores();
 
             }
@@ -371,7 +389,7 @@ namespace MemoryGame
 
             lbl_user.Text = username;
             lbl_user.Visible = true;
-            lbl_score.Text = Convert.ToString(points);
+            //lbl_score.Text = Convert.ToString(points);
             lbl_score.Visible = true;
 
 
@@ -496,9 +514,8 @@ namespace MemoryGame
 
             if (dialogResult == DialogResult.Yes)
             {
-                UserSelect user = new UserSelect();
-                this.Visible = false;
-                user.Show();
+                this.Hide();
+                this.userMenu.Show();
             }
         }
 
@@ -514,9 +531,15 @@ namespace MemoryGame
 
         private void showHighScores() {
 
-            highScores hs = new highScores(this.username, this);
+            if (hsTable[username] < this.points) {
+
+                hsTable[username] = this.points;
+                
+            }
+            highScores hs = new highScores(hsTable, this);
             this.Enabled = false;
             hs.Show();
+
 
         }
 

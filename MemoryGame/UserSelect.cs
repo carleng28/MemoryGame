@@ -34,7 +34,7 @@ namespace MemoryGame
 
                 users.Add(txt_user_name.Text.Trim());
                 fillComboBox(users, cb_select_player);
-                MemoryGame.getSingleton(cb_select_player.Text.Trim(), this).Show();
+                MemoryGame.getSingleton(txt_user_name.Text.Trim(), this).Show();
                 
                 this.Hide();
             }

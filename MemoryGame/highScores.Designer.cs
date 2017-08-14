@@ -28,31 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cb_score_filter = new System.Windows.Forms.ComboBox();
             this.highScoreGrid = new System.Windows.Forms.DataGridView();
             this.lbl_high_scores = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.highScoreGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cb_score_filter
-            // 
-            this.cb_score_filter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_score_filter.FormattingEnabled = true;
-            this.cb_score_filter.Items.AddRange(new object[] {
-            "Personal bests",
-            "All players"});
-            this.cb_score_filter.Location = new System.Drawing.Point(127, 48);
-            this.cb_score_filter.Name = "cb_score_filter";
-            this.cb_score_filter.Size = new System.Drawing.Size(171, 21);
-            this.cb_score_filter.TabIndex = 7;
-            this.cb_score_filter.SelectedIndexChanged += new System.EventHandler(this.cb_score_filter_SelectedIndexChanged);
             // 
             // highScoreGrid
             // 
             this.highScoreGrid.AllowUserToAddRows = false;
             this.highScoreGrid.AllowUserToDeleteRows = false;
             this.highScoreGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.highScoreGrid.Location = new System.Drawing.Point(26, 87);
+            this.highScoreGrid.Location = new System.Drawing.Point(25, 46);
             this.highScoreGrid.Name = "highScoreGrid";
             this.highScoreGrid.ReadOnly = true;
             this.highScoreGrid.Size = new System.Drawing.Size(375, 275);
@@ -73,8 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 383);
-            this.Controls.Add(this.cb_score_filter);
+            this.ClientSize = new System.Drawing.Size(428, 344);
             this.Controls.Add(this.highScoreGrid);
             this.Controls.Add(this.lbl_high_scores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -91,8 +76,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cb_score_filter;
         private System.Windows.Forms.DataGridView highScoreGrid;
         private System.Windows.Forms.Label lbl_high_scores;
     }

@@ -14,19 +14,26 @@ namespace MemoryGame
     public partial class highScores : Form
     {
         String username;
+        int score;
         Form game;
-        SqlConnection con;
         SqlDataAdapter sda;
-        DataTable dt;
+        DataTable dt = new DataTable();
         SqlCommandBuilder sqlb;
-        public highScores(String username, Form game)
+        DataRow row;
+        Dictionary<String, int> hsT;
+
+        public highScores(Dictionary<String, int> hst, Form game)
         {
-            this.username = username;
+            this.hsT = hst;
             this.game = game;
+
+            
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Score");
 
             InitializeComponent();
 
-            cb_score_filter.SelectedItem = cb_score_filter.Items[0];
+            
         }
 
         private void highScoreGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,46 +48,36 @@ namespace MemoryGame
         }
         
 
-        private void cb_score_filter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cb_score_filter.Text.Equals("All players"))
-            {
 
-
-                con = new SqlConnection("Data Source=(localdb)\\MSSQLLOCALDB;Initial Catalog=memoryGame;Integrated Security=True");
-                con.Open();
-                sda = new SqlDataAdapter("select top 10 name, max(score) high_score, date_entry"+ 
-                    " from player_score" +
-                    " group by name, date_entry" +
-                    " order by max(score) desc", con);
-                dt = new DataTable();
-                sda.Fill(dt);
-                highScoreGrid.DataSource = dt;
-                con.Close();
-            }
-            else {
-
-                loadPersonalBests();
-            }
-
-        }
 
         private void formLoad(object sender, EventArgs e)
         {
-            loadPersonalBests();
+            loadAllplayersBests();
 
         }
 
-        private void loadPersonalBests() {
 
-            con = new SqlConnection("Data Source=(localdb)\\MSSQLLOCALDB;Initial Catalog=memoryGame;Integrated Security=True");
-            con.Open();
-            sda = new SqlDataAdapter("select top 10 * from player_score where name = '" + username + "'" +
-                " order by score desc", con);
+
+        private void loadAllplayersBests()
+        {
+            var top5 = hsT.OrderByDescending(pair => pair.Value).Take(5);
+            
             dt = new DataTable();
-            sda.Fill(dt);
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Score");
+            foreach (var score in top5)
+            {
+
+                
+                row = dt.NewRow();
+                
+                row["Name"] = score.Key;
+                row["Score"] = score.Value;
+                dt.Rows.Add(row);
+               
+            }
             highScoreGrid.DataSource = dt;
-            con.Close();
+
         }
     }
 }
