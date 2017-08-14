@@ -22,7 +22,7 @@ namespace MemoryGame
         public UserSelect userMenu;
         public String username;
         public int score;
-
+        
         //DATA STRUCTURE 2 OF 5
         int[] boardGame = new int[16];
         int playNumber = 0;
@@ -37,6 +37,8 @@ namespace MemoryGame
         SqlConnection con;
         SqlDataAdapter sda;
         DataTable dt;
+
+        IHints hint = new AdapterHints();
         
 
 
@@ -553,6 +555,11 @@ namespace MemoryGame
                 " Each error will cost 20 points. ", "Instructions", MessageBoxButtons.OK,MessageBoxIcon.Information);
 
  
+        }
+
+        private void displayHintsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hint.GetHints();
         }
     }
 }

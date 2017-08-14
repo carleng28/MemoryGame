@@ -58,6 +58,8 @@
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_user = new System.Windows.Forms.Label();
             this.lbl_score = new System.Windows.Forms.Label();
+            this.hintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displayHintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.boxIcon1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxIcon2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxIcon3)).BeginInit();
@@ -271,6 +273,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
+            this.hintsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -294,7 +297,7 @@
             // startOverToolStripMenuItem
             // 
             this.startOverToolStripMenuItem.Name = "startOverToolStripMenuItem";
-            this.startOverToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startOverToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.startOverToolStripMenuItem.Text = "&Start over";
             this.startOverToolStripMenuItem.ToolTipText = "Start a new game from scratch";
             this.startOverToolStripMenuItem.Click += new System.EventHandler(this.startOverToolStripMenuItem_Click);
@@ -302,7 +305,7 @@
             // checkHighScoresToolStripMenuItem
             // 
             this.checkHighScoresToolStripMenuItem.Name = "checkHighScoresToolStripMenuItem";
-            this.checkHighScoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.checkHighScoresToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.checkHighScoresToolStripMenuItem.Text = "High Scores";
             this.checkHighScoresToolStripMenuItem.ToolTipText = "Check your personal bests and other players";
             this.checkHighScoresToolStripMenuItem.Click += new System.EventHandler(this.checkHighScoresToolStripMenuItem_Click);
@@ -310,7 +313,7 @@
             // uncoverAllToolStripMenuItem
             // 
             this.uncoverAllToolStripMenuItem.Name = "uncoverAllToolStripMenuItem";
-            this.uncoverAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uncoverAllToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.uncoverAllToolStripMenuItem.Text = "&Uncover all";
             this.uncoverAllToolStripMenuItem.ToolTipText = "Gving up already? click here";
             this.uncoverAllToolStripMenuItem.Click += new System.EventHandler(this.uncoverAllToolStripMenuItem_Click);
@@ -318,7 +321,7 @@
             // changePlayerToolStripMenuItem
             // 
             this.changePlayerToolStripMenuItem.Name = "changePlayerToolStripMenuItem";
-            this.changePlayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.changePlayerToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.changePlayerToolStripMenuItem.Text = "&Change Player";
             this.changePlayerToolStripMenuItem.ToolTipText = "Go back to the previous window";
             this.changePlayerToolStripMenuItem.Click += new System.EventHandler(this.changePlayerToolStripMenuItem_Click);
@@ -326,7 +329,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -341,7 +344,7 @@
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.instructionsToolStripMenuItem.Text = "&Instructions";
             this.instructionsToolStripMenuItem.ToolTipText = "Learn the rules and how to play";
             this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
@@ -370,7 +373,22 @@
             this.lbl_score.Text = "0";
             this.lbl_score.Visible = false;
             // 
-            // memoryForm
+            // hintsToolStripMenuItem
+            // 
+            this.hintsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.displayHintsToolStripMenuItem});
+            this.hintsToolStripMenuItem.Name = "hintsToolStripMenuItem";
+            this.hintsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.hintsToolStripMenuItem.Text = "Hints";
+            // 
+            // displayHintsToolStripMenuItem
+            // 
+            this.displayHintsToolStripMenuItem.Name = "displayHintsToolStripMenuItem";
+            this.displayHintsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.displayHintsToolStripMenuItem.Text = "Display hints";
+            this.displayHintsToolStripMenuItem.Click += new System.EventHandler(this.displayHintsToolStripMenuItem_Click);
+            // 
+            // MemoryGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -400,7 +418,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "memoryForm";
+            this.Name = "MemoryGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Memory Game!";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formClosedEvent);
@@ -458,6 +476,8 @@
         private System.Windows.Forms.ToolStripMenuItem changePlayerToolStripMenuItem;
         private System.Windows.Forms.Label lbl_user;
         private System.Windows.Forms.Label lbl_score;
+        private System.Windows.Forms.ToolStripMenuItem hintsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem displayHintsToolStripMenuItem;
     }
 }
 
